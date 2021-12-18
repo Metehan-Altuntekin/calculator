@@ -78,7 +78,7 @@ body #calculator #display output {
 
 body #calculator #display input {
   background-color: transparent;
-  height: 50%;
+  height: 45%;
   width: 100%;
   font-size: 44px;
   font-weight: 600;
@@ -151,7 +151,7 @@ body #calculator #keypad button.number {
   font-size: 1.25em;
 }
 
-body #calculator #keypad button.operator {
+body #calculator #keypad button.operator, body #calculator #keypad button#equal-button {
   font-size: 1.75em;
   font-weight: 200;
 }

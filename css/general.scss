@@ -67,7 +67,7 @@ body{
       }
       input{
         background-color: transparent;
-        height: 50%;
+        height: 45%;
         width: 100%;
         font-size: 44px;
         font-weight: 600;
@@ -124,7 +124,7 @@ body{
           font-weight: 500;
           font-size: 1.25em;
         }
-        &.operator{
+        &.operator, &#equal-button{
           font-size: 1.75em;
           font-weight: 200;
         }
