@@ -1,7 +1,148 @@
 *{
   color: white;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
+button{
 
+  &:hover{
+    border: 1px solid hsla(1, 0%, 100%, 1);
+  }
+}
 body{
   background-color: #222;
+  
+  #calculator{
+    height: 100vh;
+    width: 100%;
+    header{
+      height: 7%;
+      display: flex;
+      
+      *{
+        display: inline-block;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+      }
+      button{
+        height: 100%;
+        width: 42px;
+        
+        &:hover{
+          background-color: #444;
+          border: 1px solid hsla(1, 0%, 100%, 0.3);
+        }
+      }
+      h2{
+        font-weight: 500;
+        font-size: 20px;
+        position: relative;
+        top: 4px;
+        padding-left: 8px;
+      }
+      :last-child{
+        margin-left: auto;
+      }
+    }
+    #display{
+      width: 100%;
+      height: 20%;
+      background-color: transparent;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 7vw;
+      text-align: end;
+      
+      output{
+        display: block;
+        font-size: 15px;
+        font-weight: 300;
+        padding-right: 18px;
+        width: 100%;
+        height: 30%;
+        opacity: 0.8;
+      }
+      input{
+        background-color: transparent;
+        height: 50%;
+        width: 100%;
+        font-size: 44px;
+        font-weight: 600;
+        text-align: end;
+        padding-right: 10px;
+        overflow: hidden;
+        border: none;
+      }
+    }
+    nav{
+      height: 7%;
+      display: flex;
+      button{
+        background-color: transparent;
+        border: none;
+        width: 15%;
+        height: calc(100% - 4px);
+        margin: 2px;
+
+        &:last-child{
+          margin-left: auto;
+          span{
+            font-size: 0.9em;
+            padding: -2px;
+            margin: 0px;
+            vertical-align: top;
+          }
+        }
+        &:hover{
+          background-color: #444;
+          border: 1px solid hsla(1, 0%, 100%, 0.3);
+        }
+      }
+    }
+    #keypad{
+      height: 64%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: calc(25% - 2px) calc(25% - 2px) calc(25% - 2px) calc(25% - 2px);
+      grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+      gap: 2px;
+      justify-content: center;
+      align-items: center;
+
+      button{
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+  
+        &.number{
+          background-color: #070707;
+          font-weight: 500;
+          font-size: 1.25em;
+        }
+        &.operator{
+          font-size: 1.75em;
+          font-weight: 200;
+        }
+        &:not(.number){
+          background-color: #111;
+        }
+        &#equal-button{
+          background-color: hsl(27, 36%, 36%);
+          &:hover{
+            background-color: hsl(27, 50%, 50%);
+            border: 1px solid hsla(1, 0%, 100%, 0.3);
+          }
+        }
+        &:hover{
+          background-color: #444;
+          border: 1px solid hsla(1, 0%, 100%, 0.15);
+        }
+      }
+    }
+  }
 }
