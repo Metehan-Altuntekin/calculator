@@ -10,16 +10,31 @@ function OperatorFunction(item, index, array) {
 }
 
 function OperatorButton(value) {
-  if(lastEvent != "operatorButton"){
-    if(Boolean(output.match(/\W/)) == false){
-      output = input + value;
-      outputDisplay.value = output.replace("/","÷").replace("*","×");
-    } else if(lastEvent == "numberButton"){
-      input = eval(output + input);
-      output = input + value;
-      outputDisplay.value = output
+  if (previousAction != "operatorButton" && previousAction != "equalButton") {
+    if (operation.operator == "") {
+      operation.operator = value;
+      operation.num1 = operation.num2;
+      outputDisplay.value = operation.num1 + operation.operator
+
+      previousAction = "operatorButton";
+    } else if (previousAction == "numberButton") {
+      inputDisplay.value = operation.result()
+      outputDisplay.value = operation.result() + value;
+      operation.num1 = operation.result()
+      operation.operator = value
+      
+      previousAction = "operatorButton";
     }
+  } else if (previousAction == "operatorButton") {
+    operation.operator = value
+    outputDisplay.value = operation.num1 + operation.operator
+    previousAction = "operatorButton";
+  } else if (previousAction == "equalButton") {
+    operation.operator = value;
+    outputDisplay.value = operation.num1 + operation.operator;
   }
 
-  lastEvent = "operatorButton";
+
+
+
 }

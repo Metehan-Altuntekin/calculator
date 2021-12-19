@@ -1,10 +1,16 @@
-var input = "0";
-var output = "";
+var operation = {
+  num1 : "",
+  operator : "",
+  num2 : "",
+  result : function () {
+    return (eval(this.num1 + this.operator + this.num2));
+  }
+}
 
 const inputDisplay = document.getElementById("input");
 const outputDisplay = document.getElementById("output");
 
-var lastEvent = "";
+var previousAction = "";
 
 
 document.getElementById("clearEntry").addEventListener("click", ClearInput);
@@ -12,12 +18,13 @@ document.getElementById("clearAll").addEventListener("click", ClearInput);
 document.getElementById("clearAll").addEventListener("click", ClearOutput);
 
 function ClearInput() {
-  input = "0";
-  inputDisplay.value = input;
+  operation.num2 = ""
+  inputDisplay.value = "0"
 }
 function ClearOutput() {
-  output = "";
-  outputDisplay.value = output;
+  operation.num1 = ""
+  operation.operator = ""
+  outputDisplay.value = "";
 }
 
 
