@@ -1,38 +1,24 @@
-var step1 = "0";
-var step2 = "";
+var input = "0";
+var output = "";
 
 const inputDisplay = document.getElementById("input");
 const outputDisplay = document.getElementById("output");
 
-document.getElementById("clear").addEventListener("click", ClearInput);
+var lastEvent = "";
+
+
+document.getElementById("clearEntry").addEventListener("click", ClearInput);
 document.getElementById("clearAll").addEventListener("click", ClearInput);
 document.getElementById("clearAll").addEventListener("click", ClearOutput);
 
 function ClearInput() {
-  step1 = "0";
-  inputDisplay.value = step1;
+  input = "0";
+  inputDisplay.value = input;
 }
 function ClearOutput() {
-  Step2Clear();
+  output = "";
+  outputDisplay.value = output;
 }
 
-
-function Step1(char) {
-  step1 += char;
-  inputDisplay.value = step1.replaceAll("*", "×").replaceAll("/", "÷")
-}
-
-function Step2(char) {
-
-  if (step2.includes("/") == false && step2.includes("*") == false && step2.includes("-") == false && step2.includes("+") == false) {
-    step2 = step1 + char;
-    outputDisplay.value = step1.replaceAll("*", "×").replaceAll("/", "÷")
-  }
-}
-
-function Step2Clear() {
-  step2 = "";
-  outputDisplay.value = step2.replaceAll("*", "×").replaceAll("/", "÷")
-}
 
 
