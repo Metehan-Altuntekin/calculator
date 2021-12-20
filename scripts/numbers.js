@@ -11,14 +11,24 @@ function NumberFunction(item, index, array) {
 
 function NumberButton(value) {
 
-  if(previousAction != "equalButton" && previousAction != "operatorButton"){
-    operation.num2 += value
-    inputDisplay.value = operation.num2
-    previousAction = "numberButton"
-  } else if(previousAction == "equalButton" || previousAction == "operatorButton" ){
-    operation.num2 = value
-    inputDisplay.value = operation.num2
-    previousAction = "numberButton"
+  if (num2 === "") {
+    num2 = value
   }
-  
+  if (previousAction == "") {
+    num2 = value
+  }
+  if (previousAction == "numberButton") {
+    num2 += value
+  }
+  if (previousAction == "operatorButton") {
+    num2 = value
+  }
+  if (previousAction == "equalButton") {
+    num2 = value
+  }
+  if (previousAction == "backspaceButton") {
+    num2 += value
+  }
+
+  previousAction = "numberButton"
 }

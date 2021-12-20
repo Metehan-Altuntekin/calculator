@@ -10,30 +10,61 @@ function OperatorFunction(item, index, array) {
 }
 
 function OperatorButton(value) {
-  if (previousAction != "operatorButton" && previousAction != "equalButton") {
-    if (operation.operator == "") {
-      operation.operator = value;
-      operation.num1 = operation.num2;
-      outputDisplay.value = operation.num1 + operation.operator
+
+
+  if (previousAction == "") {
+    num1 = num2
+    operator = value
+  }
+  if (previousAction == "numberButton") {
+    num1 = num2
+    operator = value
+  }
+  if (previousAction == "operatorButton") {
+    operator = value
+  }
+  if (previousAction == "equalButton") {
+    num1 = Result()
+    num2 = ""
+  }
+  if (previousAction == "backspaceButton") {
+    num1 = num2
+    operator = value
+  }
+
+  previousAction = "operatorButton"
+
+
+
+
+  /*if (previousAction != "operatorButton" && previousAction != "equalButton") {
+    if (operator == "") {
+      operator = value;
+      num1 = num2;
+      num2 = "";
+      outputDisplay.value = num1 + operator
 
       previousAction = "operatorButton";
     } else if (previousAction == "numberButton") {
-      inputDisplay.value = operation.result()
-      outputDisplay.value = operation.result() + value;
-      operation.num1 = operation.result()
-      operation.operator = value
+      let result = result()
+      inputDisplay.value = result
+      outputDisplay.value = result + value;
+      operator = value
       
       previousAction = "operatorButton";
     }
   } else if (previousAction == "operatorButton") {
-    operation.operator = value
-    outputDisplay.value = operation.num1 + operation.operator
+    operator = value
+    outputDisplay.value = num1 + operator
+
     previousAction = "operatorButton";
   } else if (previousAction == "equalButton") {
-    operation.operator = value;
-    outputDisplay.value = operation.num1 + operation.operator;
-  }
+    operator = value;
+    outputDisplay.value = num1 + operator;
 
+    previousAction = "operatorButton"
+  }
+*/
 
 
 
