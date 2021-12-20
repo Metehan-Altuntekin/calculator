@@ -4,8 +4,7 @@ var operator = "";
 var num2 = "";
 var previousResult = "";
 var Result = function () {
-  let result = eval(num1 + operator + num2);
- // num1 = result;       //When result() is called, change num1 as result
+  let result = parseFloat(eval(num1 + operator + num2).toFixed(12)).toString();    //limit digits to 8, remove extra zeros, convert to string
   return (result);
 }
 

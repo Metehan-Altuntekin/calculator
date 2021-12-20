@@ -10,9 +10,9 @@ equalButton.addEventListener("click", function () {
     num1 = previousResult
   }
   if (previousAction == "operatorButton") {
-    if (num2 === ""){
+    if (num2 === "") {
       num2 = num1
-    } else{
+    } else {
       previousResult = Result()
       num1 = previousResult
     }
@@ -22,14 +22,14 @@ equalButton.addEventListener("click", function () {
     num1 = previousResult
   }
   if (previousAction == "backspaceButton") {
-    if (num2 === ""){
+    if (num2 === "") {
       num2 = num1
-    } else{
-      previousResult = Result()
-      num1 = previousResult
     }
-  }
+    previousResult = Result()
+    num1 = previousResult
 
+  }
+  //num2 = ""
   previousAction = "equalButton";
 
 })

@@ -11,9 +11,6 @@ function NumberFunction(item, index, array) {
 
 function NumberButton(value) {
 
-  if (num2 === "") {
-    num2 = value
-  }
   if (previousAction == "") {
     num2 = value
   }

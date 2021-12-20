@@ -24,8 +24,8 @@ function OperatorButton(value) {
     operator = value
   }
   if (previousAction == "equalButton") {
-    num1 = Result()
-    num2 = ""
+   // num2 = ""
+   operator = value
   }
   if (previousAction == "backspaceButton") {
     num1 = num2
