@@ -12,40 +12,26 @@ function OperatorFunction(item, index, array) {
 function OperatorButton(value) {
 
 
-  if (prevAct(1) == "" || prevAct(1) == undefined) {
-    num1 = num2
-    operator = value
+  if (prevAct(1) == undefined || prevAct(1) == "") {
+
   }
   if (prevAct(1) == "number") {
-    if (num1 === "") {
-      num1 = num2
-      operator = value
-    } else {
-      previousResult = Result()
-      num1 = previousResult
-      operator = value
-    }
+
   }
   if (prevAct(1) == "operator") {
-    operator = value
+
   }
   if (prevAct(1) == "equal") {
-    operator = value
+
   }
   if (prevAct(1) == "backspace") {
-    num1 = num2
-    operator = value
+
   }
   if (prevAct(1) == "dot") {
-    num2 = num2.slice(0, -1)
-    if (num1 === "") {
-      num1 = num2
-      operator = value
-    } else {
-      previousResult = Result()
-      num1 = previousResult
-      operator = value
-    }
+
+  }
+  if (prevAct(1) == "negPosConvert") {
+
   }
 
   actLog.push("operator")

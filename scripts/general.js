@@ -1,9 +1,11 @@
 var num1 = "";
 var operator = "";
-var num2 = "";
+var num2 = "";      //In this method, num2 is a part of output area too
+var entry = "";     //This variable is for determining if it is gonna be num1 or num2
+
 var previousResult = "";
 var Result = function () {
-  let result = parseFloat(eval((num1) + operator + (num2)).toFixed(12)).toString();    //limit digits to 8, remove extra zeros, convert to string
+  let result = parseFloat(eval((num1) + operator + (num2)).toFixed(12)).toString();    //limit digits, remove extra zeros, convert to string
   return (result);
 }
 
@@ -15,28 +17,30 @@ const actLog = [""];       //Array used for logging user actions
 const prevAct = (order) => {return(actLog[actLog.length - order])};   //Last action of user (stands for previousAction)
 
 
-document.getElementById("clearEntry").addEventListener("click", ClearInput);
-document.getElementById("clearAll").addEventListener("click", ClearInput);
-document.getElementById("clearAll").addEventListener("click", ClearOutput);
+document.getElementById("clearEntry").addEventListener("click", ClearEntry);
+document.getElementById("clearAll").addEventListener("click", ClearAll);
 
-function ClearInput() {
-  num2 = ""
-  inputDisplay.value = num2
-  actLog.push("")
+function ClearEntry() {
+  entry = ""
+  inputDisplay.value = entry
+  actLog.push("clearEntry")
 }
-function ClearOutput() {
+function ClearAll() {
+  entry = ""
+  inputDisplay.value = entry
   num1 = ""
   operator = ""
+  num2 = ""
   outputDisplay.value = "";
-  actLog.push("")
+  actLog.push("clearAll")
 }
 
 
 setInterval(function () {
-  console.log("num1 = " + num1);  
-  console.log("num2 = " + num2);  
-  console.log("operator = " +operator);
-  console.log("prevAct = " + prevAct(1));  
+  console.log(num1 + operator + num2);  
+  console.log(`prev res = ${previousResult}`)
+  console.log(`entry = ${entry}`);
+  console.log(`prevAct = ${prevAct(1)}`);  
   console.log("\n")
   
 }, 3000)

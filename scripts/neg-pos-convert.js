@@ -1,6 +1,6 @@
-const equalButton = document.getElementById("equal-button");
+document.getElementById("neg-pos-convert-button").addEventListener("click", DotButtonFunction)
 
-equalButton.addEventListener("click", function () {
+function DotButtonFunction() {
 
   if (prevAct(1) == undefined || prevAct(1) == "") {
 
@@ -25,6 +25,5 @@ equalButton.addEventListener("click", function () {
   }
 
 
-  actLog.push("equal");
-
-})
+  actLog.push("negPosConvert")
+}
