@@ -36,14 +36,14 @@
       <button>M<span class="material-icons">arrow_drop_down</span></button>
     </nav>
     <div id="keypad">
-      <button>%</button>
+      <button class="keypad-button" value="percent">%</button>
       <button id="clearEntry">CE</button>
       <button id="clearAll">C</button>
-      <button class="material-icons" id="backspace-button">backspace</button>
+      <button class="keypad-button material-icons" id="backspace-button" value="backspace">backspace</button>
 
-      <button>1/x</button>
-      <button>x<sup>2</sup></button>
-      <button><sup>2</sup>&radic;x</button>
+      <button class="keypad-button" value="invert">1/x</button>
+      <button class="keypad-button" value="square">x<sup>2</sup></button>
+      <button class="keypad-button" value="squareRoot"><sup>2</sup>&radic;x</button>
       <button class="operator" value="/">÷</button>
 
       <button class="number" value="7">7</button>
@@ -61,10 +61,10 @@
       <button class="number" value="3">3</button>
       <button class="operator" value="+">+</button>
 
-      <button id="neg-pos-convert-button">+/-</button>
+      <button class="keypad-button" id="neg-pos-convert-button" value="negate">+/-</button>
       <button class="number" value="0">0</button>
-      <button id="dot-button" value=".">.</button>
-      <button id="equal-button" value="=">=</button>
+      <button class="keypad-button" id="dot-button" value="dot">.</button>
+      <button class="keypad-button" id="equal-button" value="equal">=</button>
     </div>
   </div>
 
@@ -72,9 +72,7 @@
 <script src="./scripts/general.js"></script>
 <script src="./scripts/numbers.js"></script>
 <script src="./scripts/operators.js"></script>
-<script src="./scripts/equal.js"></script>
-<script src="./scripts/backspace.js"></script>
-<script src="./scripts/dot.js"></script>
-<script src="./scripts/neg-pos-convert.js"></script>
+<script src="./scripts/keypad-buttons.js"></script>
+<script src="./scripts/scenario.js"></script>
 
 </html>
