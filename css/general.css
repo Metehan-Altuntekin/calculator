@@ -4,7 +4,7 @@
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 button:hover {
@@ -145,7 +145,7 @@ body #calculator #keypad button {
   font-size: 14px;
 }
 
-body #calculator #keypad button.number {
+body #calculator #keypad button.number, body #calculator #keypad button#dot-button, body #calculator #keypad button#neg-pos-convert-button {
   background-color: #070707;
   font-weight: 500;
   font-size: 1.25em;

@@ -2,14 +2,14 @@ const equalButton = document.getElementById("equal-button");
 
 equalButton.addEventListener("click", function () {
 
-  if (previousAction == "") {
+  if (prevAct(1) == "") {
     num1 = num2;
   }
-  if (previousAction == "numberButton") {
+  if (prevAct(1) == "number") {
     previousResult = Result()
     num1 = previousResult
   }
-  if (previousAction == "operatorButton") {
+  if (prevAct(1) == "operator") {
     if (num2 === "") {
       num2 = num1
     } else {
@@ -17,7 +17,7 @@ equalButton.addEventListener("click", function () {
       num1 = previousResult
     }
   }
-  if (previousAction == "equalButton") {
+  if (prevAct(1) == "equal") {
     if (operator === "") {
       //Do nothing
     } else {
@@ -25,7 +25,7 @@ equalButton.addEventListener("click", function () {
       num1 = previousResult
     }
   }
-  if (previousAction == "backspaceButton") {
+  if (prevAct(1) == "backspace") {
     if (num2 === "") {
       num2 = num1
     }
@@ -33,12 +33,12 @@ equalButton.addEventListener("click", function () {
     num1 = previousResult
 
   }
-  if (previousAction == "dotButton") {
+  if (prevAct(1) == "dot") {
     num2 = num2.slice(0, -1)
     previousResult = Result()
     num1 = previousResult
 
   }
-  previousAction = "equalButton";
+  actLog.push("equal");
 
 })

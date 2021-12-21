@@ -12,11 +12,11 @@ function OperatorFunction(item, index, array) {
 function OperatorButton(value) {
 
 
-  if (previousAction == "") {
+  if (prevAct(1) == "") {
     num1 = num2
     operator = value
   }
-  if (previousAction == "numberButton") {
+  if (prevAct(1) == "number") {
     if (num1 === "") {
       num1 = num2
       operator = value
@@ -26,18 +26,18 @@ function OperatorButton(value) {
       operator = value
     }
   }
-  if (previousAction == "operatorButton") {
+  if (prevAct(1) == "operator") {
     operator = value
   }
-  if (previousAction == "equalButton") {
+  if (prevAct(1) == "equal") {
     // num2 = ""
     operator = value
   }
-  if (previousAction == "backspaceButton") {
+  if (prevAct(1) == "backspace") {
     num1 = num2
     operator = value
   }
-  if (previousAction == "dotButton") {
+  if (prevAct(1) == "dot") {
     num2 = num2.slice(0, -1)
     if (num1 === "") {
       num1 = num2
@@ -49,37 +49,37 @@ function OperatorButton(value) {
     }
   }
 
-  previousAction = "operatorButton"
+  actLog.push("operator")
 
 
 
 
-  /*if (previousAction != "operatorButton" && previousAction != "equalButton") {
+  /*if (prevAct(1) != "operatorButton" && prevAct(1) != "equalButton") {
     if (operator == "") {
       operator = value;
       num1 = num2;
       num2 = "";
       outputDisplay.value = num1 + operator
 
-      previousAction = "operatorButton";
-    } else if (previousAction == "numberButton") {
+      prevAct(1) = "operatorButton";
+    } else if (prevAct(1) == "numberButton") {
       let result = result()
       inputDisplay.value = result
       outputDisplay.value = result + value;
       operator = value
       
-      previousAction = "operatorButton";
+      prevAct(1) = "operatorButton";
     }
-  } else if (previousAction == "operatorButton") {
+  } else if (prevAct(1) == "operatorButton") {
     operator = value
     outputDisplay.value = num1 + operator
 
-    previousAction = "operatorButton";
-  } else if (previousAction == "equalButton") {
+    prevAct(1) = "operatorButton";
+  } else if (prevAct(1) == "equalButton") {
     operator = value;
     outputDisplay.value = num1 + operator;
 
-    previousAction = "operatorButton"
+    prevAct(1) = "operatorButton"
   }
 */
 

@@ -1,53 +1,52 @@
-*{
+* {
   color: white;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
-button{
-
-  &:hover{
+button {
+  &:hover {
     border: 1px solid hsla(1, 0%, 100%, 1);
   }
 }
-body{
+body {
   background-color: #222;
-  
-  #calculator{
+
+  #calculator {
     height: 100vh;
     width: 100%;
-    header{
+    header {
       height: 7%;
       display: flex;
-      
-      *{
+
+      * {
         display: inline-block;
         height: 100%;
         background-color: transparent;
         border: none;
       }
-      button{
+      button {
         height: 100%;
         width: 42px;
-        
-        &:hover{
+
+        &:hover {
           background-color: #444;
           border: 1px solid hsla(1, 0%, 100%, 0.3);
         }
       }
-      h2{
+      h2 {
         font-weight: 500;
         font-size: 20px;
         position: relative;
         top: 4px;
         padding-left: 8px;
       }
-      :last-child{
+      :last-child {
         margin-left: auto;
       }
     }
-    #display{
+    #display {
       width: 100%;
       height: 20%;
       background-color: transparent;
@@ -55,8 +54,8 @@ body{
       font-weight: 600;
       line-height: 7vw;
       text-align: end;
-      
-      output{
+
+      output {
         display: block;
         font-size: 15px;
         font-weight: 300;
@@ -65,7 +64,7 @@ body{
         height: 30%;
         opacity: 0.8;
       }
-      input{
+      input {
         background-color: transparent;
         height: 45%;
         width: 100%;
@@ -77,32 +76,32 @@ body{
         border: none;
       }
     }
-    nav{
+    nav {
       height: 7%;
       display: flex;
-      button{
+      button {
         background-color: transparent;
         border: none;
         width: 15%;
         height: calc(100% - 4px);
         margin: 2px;
 
-        &:last-child{
+        &:last-child {
           margin-left: auto;
-          span{
+          span {
             font-size: 0.9em;
             padding: -2px;
             margin: 0px;
             vertical-align: top;
           }
         }
-        &:hover{
+        &:hover {
           background-color: #444;
           border: 1px solid hsla(1, 0%, 100%, 0.3);
         }
       }
     }
-    #keypad{
+    #keypad {
       height: 64%;
       width: 100%;
       display: grid;
@@ -112,33 +111,36 @@ body{
       justify-content: center;
       align-items: center;
 
-      button{
+      button {
         width: 100%;
         height: 100%;
         background-color: transparent;
         border: none;
         font-size: 14px;
-  
-        &.number{
+
+        &.number,
+        &#dot-button,
+        &#neg-pos-convert-button {
           background-color: #070707;
           font-weight: 500;
           font-size: 1.25em;
         }
-        &.operator, &#equal-button{
+        &.operator,
+        &#equal-button {
           font-size: 1.75em;
           font-weight: 200;
         }
-        &:not(.number){
+        &:not(.number) {
           background-color: #111;
         }
-        &#equal-button{
+        &#equal-button {
           background-color: hsl(27, 36%, 36%);
-          &:hover{
+          &:hover {
             background-color: hsl(27, 50%, 50%);
             border: 1px solid hsla(1, 0%, 100%, 0.3);
           }
         }
-        &:hover{
+        &:hover {
           background-color: #444;
           border: 1px solid hsla(1, 0%, 100%, 0.15);
         }

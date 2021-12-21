@@ -11,24 +11,24 @@ function NumberFunction(item, index, array) {
 
 function NumberButton(value) {
 
-  if (previousAction == "") {
+  if (prevAct(1) == undefined) {
     num2 = value
   }
-  if (previousAction == "numberButton") {
+  if (prevAct(1) == "number") {
     num2 += value
   }
-  if (previousAction == "operatorButton") {
+  if (prevAct(1) == "operator") {
     num2 = value
   }
-  if (previousAction == "equalButton") {
+  if (prevAct(1) == "equal") {
     num2 = value
   }
-  if (previousAction == "backspaceButton") {
+  if (prevAct(1) == "backspace") {
     num2 += value
   }
-  if (previousAction == "dotButton"){
+  if (prevAct(1) == "dot"){
     num2 += value
   }
 
-  previousAction = "numberButton"
+  actLog.push("number")
 }

@@ -2,19 +2,19 @@ const backspaceButton = document.getElementById("backspace-button");
 
 document.getElementById("backspace-button").addEventListener("click", function () {
   
-  if(previousAction == ""){
+  if(prevAct(1) == ""){
     //do nothing    
   }
-  if(previousAction == "numberButton"){
+  if(prevAct(1) == "number"){
     num2 = num2.slice(0,-1)
   }
-  if(previousAction == "operatorButton"){
+  if(prevAct(1) == "operator"){
     //do nothing
   }
-  if(previousAction == "equalButton"){
+  if(prevAct(1) == "equal"){
     num1 = ""
   }
-  if(previousAction == "backspaceButton"){
+  if(prevAct(1) == "backspace"){
     if(num2 === ""){
       //do nothing
     } else{
@@ -23,5 +23,5 @@ document.getElementById("backspace-button").addEventListener("click", function (
   }
   
 
-  previousResult = "backspaceButton"
+  actLog.push("backspace")
 })
