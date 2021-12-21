@@ -1,47 +1,52 @@
-document.getElementById("neg-pos-convert-button").addEventListener("click", function () {
+document.getElementById("neg-pos-convert-button").addEventListener("click", DotButtonFunction)
 
-  if (prevAct(1) == "") {
-    //Do nothing
+function DotButtonFunction() {
+
+  if (prevAct(1) == "" || prevAct(1) == undefined) {
+    if(num2 === ""){
+      return
+    } else{
+      num2 = -(parseFloat(num2))
+    }
   }
   if (prevAct(1) == "number") {
-    if (num2.startsWith("-" == true)) {
-      num2 = num2.substring(1)
-    } else {
-      num2 = "-" + num2
-    }
+    num2 = -(parseFloat(num2))
   }
   if (prevAct(1) == "operator") {
     if (num2 === "") {
-      //do nothing
+      return
     } else {
-      if (num2.startsWith("-" == true)) {
-        num2 = num2.substring(1)
-      } else {
-        num2 = "-" + num2
-      }
+      num2 = -(parseFloat(num2))
     }
   }
   if (prevAct(1) == "equal") {
     if (num1 === "") {
-      //do nothing
+      return
     } else {
-      if (num1.startsWith("-" == true)) {
-        num1 = num1.substring(1)
-      } else {
-        num1 = "-" + num1
-      }
+      num1 = -(parseFloat(num1))
     }
   }
   if (prevAct(1) == "backspace") {
-
+    if (num2 === "") {
+      return
+    } else {
+      num2 = -(parseFloat(num2))
+    }
   }
   if (prevAct(1) == "dot") {
-
+    num2 = -(parseFloat(num2))
   }
   if (prevAct(1) == "negPosConvert") {
-
+    for (let i = 2; i < actLog.length; i++){    //Run a loop for:
+      if(prevAct(i) != "negPosConvert"){        //Finding out what was the last action before all negPosConvert actions
+        console.log(prevAct(i))
+        actLog.push(prevAct(i))                 //Log it as last action
+        DotButtonFunction()                     //Rerun this function as last action is what it was before negPosConvert
+        return;                                 //Don't keep going
+      }
+    }
   }
 
 
   actLog.push("negPosConvert")
-})
+}

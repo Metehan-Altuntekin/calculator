@@ -12,7 +12,7 @@ function OperatorFunction(item, index, array) {
 function OperatorButton(value) {
 
 
-  if (prevAct(1) == "") {
+  if (prevAct(1) == "" || prevAct(1) == undefined) {
     num1 = num2
     operator = value
   }
@@ -30,7 +30,6 @@ function OperatorButton(value) {
     operator = value
   }
   if (prevAct(1) == "equal") {
-    // num2 = ""
     operator = value
   }
   if (prevAct(1) == "backspace") {
@@ -53,7 +52,7 @@ function OperatorButton(value) {
 
 
 
-
+//This block down there is the previous mess version that i was struggling
   /*if (prevAct(1) != "operatorButton" && prevAct(1) != "equalButton") {
     if (operator == "") {
       operator = value;

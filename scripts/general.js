@@ -11,7 +11,7 @@ var Result = function () {
 const inputDisplay = document.getElementById("input");
 const outputDisplay = document.getElementById("output");
 
-const actLog = [];       //Array used for logging user actions
+const actLog = [""];       //Array used for logging user actions
 const prevAct = (order) => {return(actLog[actLog.length - order])};   //Last action of user (stands for previousAction)
 
 
@@ -36,7 +36,7 @@ setInterval(function () {
   console.log("num1 = " + num1);  
   console.log("num2 = " + num2);  
   console.log("operator = " +operator);
-  console.log("previousAction = " + prevAct(1));  
+  console.log("prevAct = " + prevAct(1));  
   console.log("\n")
   
 }, 3000)

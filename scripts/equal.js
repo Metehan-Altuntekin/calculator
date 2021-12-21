@@ -2,7 +2,7 @@ const equalButton = document.getElementById("equal-button");
 
 equalButton.addEventListener("click", function () {
 
-  if (prevAct(1) == "") {
+  if (prevAct(1) == "" || prevAct(1) == undefined) {
     num1 = num2;
   }
   if (prevAct(1) == "number") {
@@ -19,7 +19,7 @@ equalButton.addEventListener("click", function () {
   }
   if (prevAct(1) == "equal") {
     if (operator === "") {
-      //Do nothing
+      return
     } else {
       previousResult = Result()
       num1 = previousResult
@@ -39,6 +39,12 @@ equalButton.addEventListener("click", function () {
     num1 = previousResult
 
   }
+  if(prevAct(1) == "negPosConvert"){
+    previousResult = Result()
+    num1 = previousResult
+  }
+
+
   actLog.push("equal");
 
 })

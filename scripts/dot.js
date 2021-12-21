@@ -1,6 +1,6 @@
 document.getElementById("dot-button").addEventListener("click", function () {
 
-  if (prevAct(1) == "") {
+  if (prevAct(1) == "" || prevAct(1) == undefined) {
     num2 = "0."
   }
   if (prevAct(1) == "number") {
