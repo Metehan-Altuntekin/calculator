@@ -1,4 +1,3 @@
-
 var num1 = "";
 var operator = "";
 var num2 = "";
@@ -20,13 +19,15 @@ document.getElementById("clearAll").addEventListener("click", ClearInput);
 document.getElementById("clearAll").addEventListener("click", ClearOutput);
 
 function ClearInput() {
-  num2 = "0"
+  num2 = ""
   inputDisplay.value = num2
+  previousAction = ""
 }
 function ClearOutput() {
   num1 = ""
   operator = ""
   outputDisplay.value = "";
+  previousAction = ""
 }
 
 

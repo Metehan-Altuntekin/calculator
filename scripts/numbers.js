@@ -26,6 +26,9 @@ function NumberButton(value) {
   if (previousAction == "backspaceButton") {
     num2 += value
   }
+  if (previousAction == "dotButton"){
+    num2 += value
+  }
 
   previousAction = "numberButton"
 }

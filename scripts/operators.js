@@ -17,19 +17,36 @@ function OperatorButton(value) {
     operator = value
   }
   if (previousAction == "numberButton") {
-    num1 = num2
-    operator = value
+    if (num1 === "") {
+      num1 = num2
+      operator = value
+    } else {
+      previousResult = Result()
+      num1 = previousResult
+      operator = value
+    }
   }
   if (previousAction == "operatorButton") {
     operator = value
   }
   if (previousAction == "equalButton") {
-   // num2 = ""
-   operator = value
+    // num2 = ""
+    operator = value
   }
   if (previousAction == "backspaceButton") {
     num1 = num2
     operator = value
+  }
+  if (previousAction == "dotButton") {
+    num2 = num2.slice(0, -1)
+    if (num1 === "") {
+      num1 = num2
+      operator = value
+    } else {
+      previousResult = Result()
+      num1 = previousResult
+      operator = value
+    }
   }
 
   previousAction = "operatorButton"
