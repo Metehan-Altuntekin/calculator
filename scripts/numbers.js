@@ -7,6 +7,8 @@ function NumberFunction(item, index, array) {
 
 function NumberButton(value) {
 
-  actLog.push("number")
+  if (prevAct(1) != "number") {   //Only one action log for continous number clicks
+    actLog.push("number")
+  }
   Scenario(value)
 }

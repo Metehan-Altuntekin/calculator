@@ -1,6 +1,7 @@
 var num1 = "";
 var operator = "";
 var num2 = "";      //In this method, num2 is a part of output area too
+
 var entry = "";     //This variable is for determining if it is gonna be num1 or num2
 
 var previousResult = "";
@@ -13,9 +14,11 @@ var Result = function () {
 const inputDisplay = document.getElementById("input");
 const outputDisplay = document.getElementById("output");
 
-const actLog = [""];       //Array used for logging user actions
+const actLog = ["start"];       //Array used for logging user actions
 const prevAct = (order) => {return(actLog[actLog.length - order])};   //Last action of user (stands for previousAction)
 
+const chronology = [];     //Array of events for easier determination of chronology
+const prevChron = (order) => { return (chronology[chronology.length - order]) }
 
 document.getElementById("clearEntry").addEventListener("click", ClearEntry);
 document.getElementById("clearAll").addEventListener("click", ClearAll);
@@ -35,13 +38,24 @@ function ClearAll() {
   actLog.push("clearAll")
 }
 
-
+const pre = {
+  num1: num1,
+  operator: operator,
+  num2: num2,
+  entry: entry
+}
 setInterval(function () {
-  console.log(num1 + operator + num2);  
-  console.log(`prev res = ${previousResult}`)
-  console.log(`entry = ${entry}`);
-  console.log(`prevAct = ${prevAct(1)}`);  
-  console.log("\n")
+    //Check for variable changes and log them only when they change
+  for (const key in pre) {      
+    if(pre[key] != window[key]){
+      console.log(num1 + operator + num2)
+      console.log(`entry: ${entry}`)
+      console.log(`preRes: ${previousResult}`)
+      console.log(`prevAct: ${prevAct(1)}`)
+      pre[key] = window[key]
+    }
+    
+  }
   
-}, 3000)
+}, 100)
 

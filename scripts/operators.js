@@ -7,6 +7,8 @@ function OperatorFunction(item, index, array) {
 
 function OperatorButton(value) {
 
-  actLog.push("operator")
+  if (prevAct(1) != "operator") {
+    actLog.push("operator")
+  }
   Scenario(value)
 }
