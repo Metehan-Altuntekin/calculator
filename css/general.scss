@@ -126,14 +126,14 @@ body {
           font-size: 1.25em;
         }
         &.operator,
-        &#equal-button {
+        &#executor {
           font-size: 1.75em;
           font-weight: 200;
         }
         &:not(.number) {
           background-color: #111;
         }
-        &#equal-button {
+        &#executor {
           background-color: hsl(27, 36%, 36%);
           &:hover {
             background-color: hsl(27, 50%, 50%);

@@ -95,7 +95,10 @@ function Scenario(value) {
       if (prevAct(3) == ""){
 
       }
-    }  
+    } 
+    if (prevAct(2) == "operator"){
+      
+    } 
     if (prevAct(2) == "execute") {
       num1 = previousResult
       previousResult = Result()

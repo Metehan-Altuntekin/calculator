@@ -151,7 +151,7 @@ body #calculator #keypad button.number, body #calculator #keypad button#dot-butt
   font-size: 1.25em;
 }
 
-body #calculator #keypad button.operator, body #calculator #keypad button#equal-button {
+body #calculator #keypad button.operator, body #calculator #keypad button#executor {
   font-size: 1.75em;
   font-weight: 200;
 }
@@ -160,11 +160,11 @@ body #calculator #keypad button:not(.number) {
   background-color: #111;
 }
 
-body #calculator #keypad button#equal-button {
+body #calculator #keypad button#executor {
   background-color: #7d583b;
 }
 
-body #calculator #keypad button#equal-button:hover {
+body #calculator #keypad button#executor:hover {
   background-color: #bf7940;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
