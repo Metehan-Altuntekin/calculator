@@ -36,14 +36,14 @@
       <button>M<span class="material-icons">arrow_drop_down</span></button>
     </nav>
     <div id="keypad">
-      <button class="keypad-button" value="percent">%</button>
+      <button class="entry-modifiers" value="percent">%</button>
       <button id="clearEntry">CE</button>
       <button id="clearAll">C</button>
-      <button class="keypad-button material-icons" id="backspace-button" value="backspace">backspace</button>
+      <button class="entry-modifiers material-icons" id="backspace-button" value="backspace">backspace</button>
 
-      <button class="keypad-button" value="invert">1/x</button>
-      <button class="keypad-button" value="square">x<sup>2</sup></button>
-      <button class="keypad-button" value="squareRoot"><sup>2</sup>&radic;x</button>
+      <button class="entry-modifiers" value="invert">1/x</button>
+      <button class="entry-modifiers" value="square">x<sup>2</sup></button>
+      <button class="entry-modifiers" value="squareRoot"><sup>2</sup>&radic;x</button>
       <button class="operator" value="/">÷</button>
 
       <button class="number" value="7">7</button>
@@ -61,10 +61,10 @@
       <button class="number" value="3">3</button>
       <button class="operator" value="+">+</button>
 
-      <button class="keypad-button" id="negate-button" value="negate">+/-</button>
+      <button class="entry-modifiers" id="negate-button" value="negate">+/-</button>
       <button class="number" value="0">0</button>
-      <button class="keypad-button" id="dot-button" value="dot">.</button>
-      <button class="keypad-button" id="equal-button" value="equal">=</button>
+      <button class="entry-modifiers" id="dot-button" value="dot">.</button>
+      <button id="executor" value="execute">=</button>
     </div>
   </div>
 
@@ -72,7 +72,8 @@
 <script src="./scripts/general.js"></script>
 <script src="./scripts/numbers.js"></script>
 <script src="./scripts/operators.js"></script>
-<script src="./scripts/keypad-buttons.js"></script>
+<script src="./scripts/entry-modifiers.js"></script>
+<script src="./scripts/executor.js"></script>
 <script src="./scripts/scenario.js"></script>
 
 </html>

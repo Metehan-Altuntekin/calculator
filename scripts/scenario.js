@@ -8,7 +8,7 @@ function Scenario(value) {
     else if (chronology[0] == "operator") {
       entry += value
     } 
-    else if(chronology[0] == "equal"){
+    else if(chronology[0] == "execute"){
       entry += value
     }
     else{
@@ -45,7 +45,7 @@ function Scenario(value) {
         num2 = ""
         operator = value
       }
-      if (chronology[1] == "equal") {
+      if (chronology[1] == "execute") {
         num1 = entry
         num2 = ""
         entry = ""
@@ -53,7 +53,7 @@ function Scenario(value) {
       }
 
     }
-    if(chronology[0] == "equal"){
+    if(chronology[0] == "execute"){
       num1 = previousResult
       num2 = ""
       operator = value
@@ -88,15 +88,15 @@ function Scenario(value) {
       entry += "."
     }
   }
-  if (prevAct(1) == "equal") {
+  if (prevAct(1) == "execute") {
     Chron()
     
     if (prevAct(2) == "number"){
       if (prevAct(3) == ""){
-        
+
       }
     }  
-    if (prevAct(2) == "equal") {
+    if (prevAct(2) == "execute") {
       num1 = previousResult
       previousResult = Result()
 

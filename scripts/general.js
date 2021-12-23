@@ -24,7 +24,7 @@ function Chron() {
   chronology.splice(0, chronology.length)       //Clear array before using it
 
   for (let i = 2; i < actLog.length + 1; i++) {     //Not current action, only previous ones
-    if (prevAct(i) == "start" || prevAct(i) == "number" || prevAct(i) == "operator" || prevAct(i) == "equal") {
+    if (prevAct(i) == "start" || prevAct(i) == "number" || prevAct(i) == "operator" || prevAct(i) == "execute") {
       if (chronology[chronology.length - 1] != prevAct(i)) {    //Don't double log the same act
         chronology.push(prevAct(i))
       }
