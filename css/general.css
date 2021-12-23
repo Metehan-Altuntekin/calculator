@@ -145,7 +145,7 @@ body #calculator #keypad button {
   font-size: 14px;
 }
 
-body #calculator #keypad button.number, body #calculator #keypad button#dot-button, body #calculator #keypad button#neg-pos-convert-button {
+body #calculator #keypad button.number, body #calculator #keypad button#dot-button, body #calculator #keypad button#negate-button {
   background-color: #070707;
   font-weight: 500;
   font-size: 1.25em;

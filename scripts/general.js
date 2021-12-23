@@ -15,10 +15,23 @@ const inputDisplay = document.getElementById("input");
 const outputDisplay = document.getElementById("output");
 
 const actLog = ["start"];       //Array used for logging user actions
-const prevAct = (order) => {return(actLog[actLog.length - order])};   //Last action of user (stands for previousAction)
+const prevAct = (order) => { return (actLog[actLog.length - order]) };   //Last action of user (stands for previousAction)
 
 const chronology = [];     //Array of events for easier determination of chronology
 const prevChron = (order) => { return (chronology[chronology.length - order]) }
+
+function Chron() {
+  chronology.splice(0, chronology.length)       //Clear array before using it
+
+  for (let i = 2; i < actLog.length + 1; i++) {     //Not current action, only previous ones
+    if (prevAct(i) == "start" || prevAct(i) == "number" || prevAct(i) == "operator" || prevAct(i) == "equal") {
+      if (chronology[chronology.length - 1] != prevAct(i)) {    //Don't double log the same act
+        chronology.push(prevAct(i))
+      }
+    }
+  }
+}
+
 
 document.getElementById("clearEntry").addEventListener("click", ClearEntry);
 document.getElementById("clearAll").addEventListener("click", ClearAll);
@@ -45,17 +58,17 @@ const pre = {
   entry: entry
 }
 setInterval(function () {
-    //Check for variable changes and log them only when they change
-  for (const key in pre) {      
-    if(pre[key] != window[key]){
+  //Check for variable changes and log them only when they change
+  for (const key in pre) {
+    if (pre[key] != window[key]) {
       console.log(num1 + operator + num2)
       console.log(`entry: ${entry}`)
       console.log(`preRes: ${previousResult}`)
       console.log(`prevAct: ${prevAct(1)}`)
       pre[key] = window[key]
     }
-    
+
   }
-  
+
 }, 100)
 
