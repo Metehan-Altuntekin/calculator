@@ -6,13 +6,9 @@ var entry = "";     //This variable is for determining if it is gonna be num1 or
 
 var previousResult = "";
 var Result = function () {
-  let result = parseFloat(eval((num1) + operator + (num2)).toFixed(12)).toString();    //limit digits, remove extra zeros, convert to string
+  let result = parseFloat(eval(`${num1} ${operator} ${num2}`).toFixed(12)).toString();    //limit digits, remove extra zeros, convert to string
   return (result);
 }
-
-
-const inputDisplay = document.getElementById("input");
-const outputDisplay = document.getElementById("output");
 
 const actLog = ["start"];       //Array used for logging user actions
 const prevAct = (order) => { return (actLog[actLog.length - order]) };   //Last action of user (stands for previousAction)
@@ -31,6 +27,21 @@ function Chron() {
     }
   }
 }
+
+
+const bottomDisplay = document.getElementById("input");
+const upperDisplay = document.getElementById("output");
+
+function Display(area, val) {
+  if(area == "up"){
+    bottomDisplay.value = val
+  }
+  if(area == "down"){
+    upperDisplay.value = val
+  }
+}
+
+
 
 
 document.getElementById("clearEntry").addEventListener("click", ClearEntry);
@@ -55,7 +66,8 @@ const pre = {
   num1: num1,
   operator: operator,
   num2: num2,
-  entry: entry
+  entry: entry,
+  previousResult: previousResult
 }
 setInterval(function () {
   //Check for variable changes and log them only when they change
@@ -65,7 +77,10 @@ setInterval(function () {
       console.log(`entry: ${entry}`)
       console.log(`preRes: ${previousResult}`)
       console.log(`prevAct: ${prevAct(1)}`)
-      pre[key] = window[key]
+      
+      for(const key in pre){
+        pre[key] = window[key]
+      }
     }
 
   }

@@ -1,21 +1,10 @@
 function Scenario(value) {
 
   if (prevAct(1) == "number") {
-    Chron()
-    if (chronology[0] == "start") {
-      entry += value
+    if (prevAct(2) == "execute"){
+      num1 = previousResult
     }
-    else if (chronology[0] == "operator") {
-      entry += value
-    } 
-    else if(chronology[0] == "execute"){
-      entry += value
-    }
-    else{
-      entry += value
-    }
-
-
+    entry += value
   }
   if (prevAct(1) == "operator") {
     /*if (entry === "") {
@@ -26,7 +15,7 @@ function Scenario(value) {
 
     if (chronology[0] == "number") {
       if (chronology[1] == "start") {
-        if(entry !== ""){
+        if (entry !== "") {
           num1 = entry
           entry = ""
         }
@@ -35,9 +24,6 @@ function Scenario(value) {
       if (chronology[1] == "operator") {  //...operator > number > operator
         if (entry !== "") {
           num2 = entry
-        } else {
-          actLog.pop()      //Did nothing, so delete it from log
-          return
         }
         previousResult = Result()
         num1 = previousResult
@@ -53,7 +39,10 @@ function Scenario(value) {
       }
 
     }
-    if(chronology[0] == "execute"){
+    if(chronology[0] == "operator"){
+      operator = value
+    }
+    if (chronology[0] == "execute") {
       num1 = previousResult
       num2 = ""
       operator = value
@@ -63,7 +52,14 @@ function Scenario(value) {
     //}
   }
   if (prevAct(1) == "percent") {
-    entry = (parseFloat(entry) / 100).toString()
+    if(num1 !== ""){
+      if(entry !== ""){
+        num2 = (parseFloat(num1) / 100) * parseFloat(entry)
+        entry = ""
+      } else{
+        num2 = (parseFloat(num1) / 100) * parseFloat(num2)
+      }
+    }
   }
   if (prevAct(1) == "backspace") {
     entry = entry.slice(0, -1)
@@ -85,32 +81,40 @@ function Scenario(value) {
       actLog.pop()      //Did nothing, so delete it from log
       return
     } else {
-      entry += "."
+      if(entry === ""){
+        entry = "0."
+      }else{
+        entry += "."
+      }
     }
   }
   if (prevAct(1) == "execute") {
     Chron()
-    
-    if (prevAct(2) == "number"){
-      if (prevAct(3) == ""){
 
-      }
-    } 
-    if (prevAct(2) == "operator"){
-      
-    } 
-    if (prevAct(2) == "execute") {
-      num1 = previousResult
-      previousResult = Result()
-
-    } 
-    
-    if(entry !== ""){
-      num2 = entry
-      entry = ""
+    if (chronology[0] == "start"){
+      actLog.pop()      //Did nothing, so delete it from log
+      console.log(`big chungus`)
+      return
     }
-    previousResult = Result()
-    
+    if (chronology[0] == "number") {
+      if (entry !== "") {
+        num2 = entry
+        entry = ""
+      }
+      previousResult = Result()
+    }
+    if (chronology[0] == "operator") {
+      num2 = num1
+      previousResult = Result()
+    }
+    if (chronology[0] == "execute") {
+      if (entry !== "" || num2 !== "") {
+        num1 = previousResult
+        previousResult = Result()
+      }
+    }
+
+
   }
 
 
