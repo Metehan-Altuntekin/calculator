@@ -32,13 +32,11 @@ function Chron() {
 const bottomDisplay = document.getElementById("input");
 const upperDisplay = document.getElementById("output");
 
-function Display(area, val) {
-  if(area == "up"){
-    bottomDisplay.value = val
-  }
-  if(area == "down"){
-    upperDisplay.value = val
-  }
+function UpperDisplay(val) {
+    upperDisplay.value = val.toString().replace("*","×").replace("/","÷")
+}
+function BottomDisplay(val) {
+  bottomDisplay.value = val.toString().replace("*","×").replace("/","÷")
 }
 
 
@@ -49,17 +47,22 @@ document.getElementById("clearAll").addEventListener("click", ClearAll);
 
 function ClearEntry() {
   entry = ""
-  inputDisplay.value = entry
   actLog.push("clearEntry")
+
+  if(upperDisplay.value.includes("=") == true){
+    UpperDisplay("")
+  }
+  BottomDisplay("0")
 }
 function ClearAll() {
   entry = ""
-  inputDisplay.value = entry
   num1 = ""
   operator = ""
   num2 = ""
-  outputDisplay.value = "";
   actLog.push("clearAll")
+  
+  UpperDisplay("")
+  BottomDisplay("")
 }
 
 const pre = {
