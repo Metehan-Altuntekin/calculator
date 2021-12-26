@@ -5,23 +5,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Copy of Windows 10 calculator. Built completely by Metehan-Altuntekin from scratch.">
+  <meta name="description"
+    content="Copy of Windows 10 calculator. Built completely by Metehan-Altuntekin from scratch.">
   <meta name="author" content="Metehan-Altuntekin">
   <title>Calculator</title>
 
 
   <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/menu.css">
 
   <!--Google Material Icons-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 
 <body>
   <div id="calculator">
     <header>
-      <button class="material-icons">menu</button>
-      <h2>Standart</h2>
-      <button class="material-icons">history</button>
+      <button class="material-icons-outlined" id="menu-button">menu</button>
+      <h2>Standard</h2>
+      <button class="material-icons-outlined">history</button>
     </header>
     <div id="display" title="display area">
       <output id="output" title="display upper line"></output>
@@ -33,13 +35,14 @@
       <button>M+</button>
       <button>M-</button>
       <button>MS</button>
-      <button>M<span class="material-icons">arrow_drop_down</span></button>
+      <button>M<span class="material-icons-outlined">arrow_drop_down</span></button>
     </nav>
     <div id="keypad">
       <button class="entry-modifiers" value="percent" title="percentage modifier">%</button>
       <button id="clearEntry" title="clear entry">CE</button>
       <button id="clearAll" title="clear all">C</button>
-      <button class="entry-modifiers material-icons" id="backspace-button" value="backspace" title="backspace">backspace</button>
+      <button class="entry-modifiers material-icons-outlined" id="backspace-button" value="backspace"
+        title="backspace">backspace</button>
 
       <button class="entry-modifiers" value="invert" title="invert modifier"><sup>1</sup>/x</button>
       <button class="entry-modifiers" value="square" title="square modifier">x<sup>2</sup></button>
@@ -61,11 +64,30 @@
       <button class="number" value="3" title="number 3">3</button>
       <button class="operator" value="+" title="addition operator">+</button>
 
-      <button class="entry-modifiers" id="negate-button" value="negate" title="negate modifier"><sup>+</sup>/<sub>-</sub></button>
-      <button class="number" value="0"  title="number 0">0</button>
+      <button class="entry-modifiers" id="negate-button" value="negate"
+        title="negate modifier">+/-</button>
+      <button class="number" value="0" title="number 0">0</button>
       <button class="entry-modifiers" id="dot-button" value="dot" title="decimal point">.</button>
       <button id="executor" value="execute" title="execute">=</button>
     </div>
+    <aside class="left" id="menu">
+      <div class="inner">
+        <ul>
+          <li><h2>Calculator</h2></li>
+          <li><button><span class="material-icons-outlined">calculate</span>Standard</button></li>
+          <li><button><span class="material-icons-outlined">science</span>Scientific</button></li>
+        </ul>
+        <ul>
+          <li><h2>Themes</h2></li>
+          <li><button><span class="material-icons-outlined">view_quilt</span> Theme 1</button></li>
+          <li><button><span class="material-icons-outlined">view_quilt</span> Theme 2</button></li>
+          <li><button><span class="material-icons-outlined">view_quilt</span> Theme 3</button></li>
+          <li><button><span class="material-icons-outlined">view_quilt</span> Theme 4</button></li>
+          <li><button><span class="material-icons-outlined">view_quilt</span> Theme 5</button></li>
+          <li><button><span class="material-icons-outlined">view_quilt</span> Theme 6</button></li>
+        </ul>
+      </div>
+    </aside>
   </div>
 
 </body>
@@ -75,5 +97,7 @@
 <script src="./scripts/entry-modifiers.js"></script>
 <script src="./scripts/executor.js"></script>
 <script src="./scripts/scenario.js"></script>
+
+<script src="./scripts/menu.js"></script>
 
 </html>
