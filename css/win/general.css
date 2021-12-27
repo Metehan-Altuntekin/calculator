@@ -46,6 +46,7 @@ body #calculator header * {
 body #calculator header button {
   height: 100%;
   width: 40px;
+  border: 1px solid transparent;
 }
 
 body #calculator header button:hover {
@@ -56,9 +57,7 @@ body #calculator header button:hover {
 body #calculator header h2 {
   font-weight: 500;
   font-size: 20px;
-  position: relative;
-  top: 4px;
-  padding-left: 8px;
+  padding: 4px 8px;
 }
 
 body #calculator header :last-child {

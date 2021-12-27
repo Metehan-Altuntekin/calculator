@@ -33,6 +33,7 @@ body {
       button {
         height: 100%;
         width: 40px;
+        border: 1px solid transparent;
 
         &:hover {
           background-color: #444;
@@ -42,9 +43,7 @@ body {
       h2 {
         font-weight: 500;
         font-size: 20px;
-        position: relative;
-        top: 4px;
-        padding-left: 8px;
+        padding: 4px 8px;
       }
       :last-child {
         margin-left: auto;

@@ -1,0 +1,73 @@
+#menu-button {
+  z-index: 100;
+  font-size: 20px;
+}
+
+#menu {
+  position: fixed;
+  width: 250px;
+  left: -250px;
+  height: 100vh;
+  width: 250px;
+  padding-top: 8vh;
+  text-align: start;
+  font-size: 14px;
+  background-color: #1e1e1e;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+#menu .inner {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#menu .inner::-webkit-scrollbar {
+  width: 4px;
+}
+
+#menu .inner::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#menu .inner::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border: 1px solid #1e1e1e;
+}
+
+#menu .inner::-webkit-scrollbar-button {
+  height: 10px;
+}
+
+#menu h2 {
+  font-size: inherit;
+  line-height: 40px;
+  vertical-align: middle;
+  padding-left: 7px;
+  font-weight: 600;
+}
+
+#menu button {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  height: 40px;
+  border: none;
+  text-align: inherit;
+  padding-left: 12px;
+  border: 1px solid rgba(128, 128, 128, 0);
+  font-size: inherit;
+}
+
+#menu button:hover {
+  background-color: #444;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+}
+
+#menu button span {
+  vertical-align: -4px;
+  font-size: 1.3rem;
+  background-size: 100%;
+  margin-right: 12px;
+}
+/*# sourceMappingURL=menu.css.map */
