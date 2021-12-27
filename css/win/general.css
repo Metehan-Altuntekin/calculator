@@ -13,15 +13,24 @@ button:hover {
 
 body {
   background-color: #222;
+  height: 100%;
+  width: 100%;
 }
 
 body #calculator {
   height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body #calculator header {
-  height: 7%;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +45,7 @@ body #calculator header * {
 
 body #calculator header button {
   height: 100%;
-  width: 42px;
+  width: 40px;
 }
 
 body #calculator header button:hover {
@@ -58,7 +67,7 @@ body #calculator header :last-child {
 
 body #calculator #display {
   width: 100%;
-  height: 20%;
+  height: 19.5vh;
   background-color: transparent;
   font-size: 30px;
   font-weight: 600;
@@ -89,18 +98,18 @@ body #calculator #display input {
 }
 
 body #calculator nav {
-  height: 7%;
+  height: 6.5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 1px 3px;
 }
 
 body #calculator nav button {
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
   width: 15%;
-  height: calc(100% - 4px);
-  margin: 2px;
+  margin: 0px 2px;
 }
 
 body #calculator nav button:last-child {
@@ -120,14 +129,14 @@ body #calculator nav button:hover {
 }
 
 body #calculator #keypad {
-  height: 64%;
+  height: calc((100vh - 26.5vh) - 40px);
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: calc(25% - 2px) calc(25% - 2px) calc(25% - 2px) calc(25% - 2px);
-      grid-template-columns: calc(25% - 2px) calc(25% - 2px) calc(25% - 2px) calc(25% - 2px);
-  -ms-grid-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
-      grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+  -ms-grid-columns: calc(25% - 6px) calc(25% - 2px) calc(25% - 2px) calc(25% - 6px);
+      grid-template-columns: calc(25% - 6px) calc(25% - 2px) calc(25% - 2px) calc(25% - 6px);
+  -ms-grid-rows: calc(16.7% - 2px) calc(16.7% - 2px) calc(16.6% - 2px) calc(16.7% - 2px) calc(16.7% - 2px) calc(16.7% - 2px);
+      grid-template-rows: calc(16.7% - 2px) calc(16.7% - 2px) calc(16.6% - 2px) calc(16.7% - 2px) calc(16.7% - 2px) calc(16.7% - 2px);
   gap: 2px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -169,7 +178,7 @@ body #calculator #keypad button#executor:hover {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-body #calculator #keypad button:hover {
+body #calculator #keypad button:hover, body #calculator #keypad button#dot-button:hover, body #calculator #keypad button#negate-button:hover {
   background-color: #444;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
